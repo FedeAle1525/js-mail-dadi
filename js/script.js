@@ -14,7 +14,7 @@ pulsanteMailEl.addEventListener("click", function() {
   console.log("Utente: ", mailUtente);
   
   // 4. Controllare se la mail dell'Utente è presente nell'Array.
-  let messaggio = "no";
+  let presente = "no";
   
   for(let i = 0; i < arrayMail.length; i++){
   
@@ -22,13 +22,13 @@ pulsanteMailEl.addEventListener("click", function() {
     // console.log("ArrayMail: ", arrayMail[i], typeof arrayMail[i]);
   
     if (mailUtente === arrayMail[i]){
-      messaggio = "si";
+      presente = "si";
     }
   
   }
   
   // 5. Stampare un messaggio con esito ricerca
-  if (messaggio === "si"){
+  if (presente === "si"){
     document.getElementById("mail").innerHTML = "La tua email è già presente!" + " " + '<i class="fa-regular fa-face-laugh-beam"></i>';
   } else {
     document.getElementById("mail").innerHTML = "La tua email non è presente!" + " " + '<i class="fa-regular fa-face-frown"></i>';
