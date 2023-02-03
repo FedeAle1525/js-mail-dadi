@@ -31,3 +31,30 @@ if (messaggio === "si"){
 
 
 // ESERCIZIO 2 - DADI
+
+// 1. Recuperare elemento "pulsante" da HTML
+const pulsanteEl = document.querySelector(".container button");
+// console.log(pulsanteEl);
+
+// 2. Generare un numero casuale (da 1 a 6) per Utente e PC al "click" del pulsante
+pulsanteEl.addEventListener("click", function() {
+  const numeroUtente = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+  const numeroPC = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+
+  document.getElementById("dado-utente").innerHTML = numeroUtente;
+  document.getElementById("dado-pc").innerHTML = numeroPC;
+
+  // 3. Se numeroUtente > numeroPC ----> L'Utente vince!
+  if (numeroUtente > numeroPC){
+    document.getElementById("esito").innerHTML = "Hai Vinto!" + " " + '<i class="fa-regular fa-face-laugh-beam"></i>';
+  }
+
+  if(numeroUtente < numeroPC){
+    document.getElementById("esito").innerHTML = "Hai Perso!" + " " + '<i class="fa-regular fa-face-frown"></i>';
+  }
+
+  if (numeroUtente === numeroPC){
+    document.getElementById("esito").innerHTML = "Pareggio!" + " " + '<i class="fa-solid fa-xmark"></i>';
+  }
+
+});
