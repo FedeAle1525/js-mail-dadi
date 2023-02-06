@@ -23,7 +23,14 @@ pulsanteMailEl.addEventListener("click", function() {
   
     if (mailUtente === arrayMail[i]){
       presente = "si";
+      // Utile metterlo per evitare controlli inutili e fermare il tutto quando si trova la mail
+      break; 
     }
+
+    // 4.1 - Altra soluzione: salvare in una variabile il risultato del confronto e poi verificarne il risultato
+              // const uguaglianza = (mailUtente === arrayMail[i])
+              // Questa variabile assume valore "true" o "false";
+              // Serve una variabile di supporto esterna per portare risultato fuori dal ciclo
   
   }
   
